@@ -114,7 +114,7 @@ python scripts/cross_validate_params.py \
     --config configs/default_config.yaml \
     --n_words 100 --n_samples 40 --k_folds 5
 
-# 2. Train on DataSets A-E, test on F+S
+# 2. Train on DataSets A-D, test on E+F+S
 python scripts/train_and_evaluate.py \
     --data_root /path/to/IFN_ENIT \
     --config configs/default_config.yaml
