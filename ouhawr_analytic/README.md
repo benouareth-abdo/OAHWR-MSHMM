@@ -1,5 +1,4 @@
-# OUHAWR – Offline Handwritten Arabic Word Recognition
-## Multi-Stream HMM with Explicit State Duration (MSDHMM)
+# OUHAWR – Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration (MSDHMM)
 
 > Implementation of the analytic approach described in:
 >
