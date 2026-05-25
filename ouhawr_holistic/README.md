@@ -4,7 +4,7 @@ Offline Unconstrained Handwritten Arabic Word Recognition (OUHAWR) — Holistic 
 
 Based on the paper:
 > *Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration*
-> A. Benouareth, A. Kermi, To be submitted to Information fusion, (2026)
+> A. Benouareth, A. Kermi, To be submitted to Information Fusion, (2026)
 
 ---
 
@@ -82,7 +82,7 @@ The IFN/ENIT database contains handwritten Arabic town names across 6 sets:
 | DataSetB | Training              |
 | DataSetC | Training              |
 | DataSetD | Training              |
-| DataSetE | Training              |
+| DataSetE | Test                  |
 | DataSetF | Test                  |
 | DataSetS | Test                  |
 
@@ -129,28 +129,49 @@ python scripts/extract_features.py \
 
 ## Parameters (configured via YAML or K-fold CV)
 
-| Parameter           | Default | Search Space          |
-|---------------------|---------|-----------------------|
-| LPQ+ window M       | 5       | {3,5,7,9}             |
-| LPQ+ bins B         | 8       | {4,8,16}              |
-| LPQ+ patches N      | 25      | {16,25,36}            |
-| WLD T (excitation)  | 8       | {8,10,12}             |
-| WLD M (orientation) | 6       | {6,8}                 |
-| WLD patches N       | 21      | {9,15,21}             |
-| LDNP scales L       | 3       | {1,2,3}               |
-| LDNP patches N      | 25      | {16,25,36}            |
-| Reduction dim d     | 64      | {32,64,128,256}       |
-| SVM C               | 1.0     | {0.01,0.1,1,10,100}   |
-| Reduction method    | LSDR    | PCA,LDA,PCA+LDA,LSDR,LSDR+LDA |
-| N-best hypotheses   | 10      | {5,10,20,50}          |
+| Parameter           | Default | Search Space                                |
+|---------------------|---------|---------------------------------------------|
+| LPQ+ window M       | 5       | {3,5,7,9}                                   |
+| LPQ+ bins B         | 8       | {4,8,16}                                    |
+| LPQ+ patches N      | 32      | {2, 4, 8, 16, 32, 64,128,256, 512,1024,2048}|
+| WLD T (excitation)  | 8       | {8,10,12,14,16}                             |
+| WLD M (orientation) | 6       | {6,8}                                       |                     
+| WLD patches N       | 128     | {2, 4, 8, 16, 32, 64,128,256, 512,1024,2048}|
+| LDNP scales L       | 3       | {1,2,3}                                     |
+| LDNP patches N      | 128     | {2, 4, 8, 16, 32, 64,128,256, 512,1024,2048}|
+| Reduction dim d     | 64      |{32,40,50,60,64,70,80,90,100,110,120,128,130,|
+|                     |         | 140,150,160,170,180,190,200,210,220,230,240,|
+|                     |         |    250,256}                                 |
+| SVM C               | 1.0     | {0.01, 0.1, 1.0, 10.0, 100.0}               |
+| Reduction method    | LSDR    | PCA,LDA,PCA+LDA,LSDR,LSDR+LDA               |
+| N-best hypotheses   | 10      | {1,5, 10, 20, 30,40,50,60, 70,80,90,100}    |
 
 ---
 
 ## References
 
 - Benouareth et al. (2026) — *OUHAWR using Multi-Stream HMM with Explicit State Duration*
-- Cook & Forzani (2008) — *Principal Fitted Components for Dimension Reduction in Regression*
-- Haghighat et al. (2016) — *Discriminant Correlation Analysis*
-- Chen et al. (2010) — *WLD: A Robust Local Image Descriptor*
-- Rivera et al. (2013) — *Local Directional Number Pattern*
-- Xiao et al. (2017) — *Local Phase Quantization Plus*
+1. Cook, R. D., & Forzani, L. (2008).
+   **Principal Fitted Components for Dimension Reduction in Regression.**
+   *Journal of the Royal Statistical Society: Series B (Statistical Methodology), 70(5), 931–955.*
+   https://doi.org/10.1111/j.1467-9868.2008.00668.x
+
+2. Haghighat, M., Abdel-Mottaleb, M., & Alhalabi, W. (2016).
+   **Discriminant Correlation Analysis: Real-Time Feature Level Fusion for Multimodal Biometric Recognition.**
+   *IEEE Transactions on Information Forensics and Security, 11(9), 1984–1996.*
+   https://doi.org/10.1109/TIFS.2016.2569061
+
+3. Chen, J., Shan, S., He, C., Zhao, G., Pietikainen, M., Chen, X., & Gao, W. (2010).
+   **WLD: A Robust Local Image Descriptor.**
+   *IEEE Transactions on Pattern Analysis and Machine Intelligence, 32(9), 1705–1720.*
+   https://doi.org/10.1109/TPAMI.2009.155
+
+4. Rivera, A. R., Castillo, J. R., & Chae, O. (2013).
+   **Local Directional Number Pattern for Face Analysis: Face and Expression Recognition.**
+   *IEEE Transactions on Image Processing, 22(5), 1740–1752.*
+   https://doi.org/10.1109/TIP.2012.2235848
+
+5. Xiao, B., Guo, J., Peng, J., & Li, W. (2017).
+   **Local Phase Quantization Plus: A Principled Enhancement of Local Phase Quantization.**
+   *IET Image Processing, 11(7), 529–536.*
+   https://doi.org/10.1049/iet-ipr.2016.0955
