@@ -169,7 +169,9 @@ python scripts/extract_features.py \
    *IEEE Transactions on Image Processing, 22(5), 1740–1752.*
    https://doi.org/10.1109/TIP.2012.2235848
 
-5. Xiao, B., Guo, J., Peng, J., & Li, W. (2017).
-   **Local Phase Quantization Plus: A Principled Enhancement of Local Phase Quantization.**
-   *IET Image Processing, 11(7), 529–536.*
-   https://doi.org/10.1049/iet-ipr.2016.0955
+5. 5. Xiao, Y., Cao, Z., Wang, L., & Li, T. (2017).
+   **Local Phase Quantization Plus: A Principled Method for Embedding Local Phase
+   Quantization into Fisher Vector for Blurred Image Recognition.**
+   *Information Sciences, Volume 420, December 2017, Pages 77-95.*
+   https://doi.org/10.1016/j.ins.2017.08.059
+  
