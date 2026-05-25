@@ -16,8 +16,8 @@ data:
     DataSetE: "DataSetE"
     DataSetF: "DataSetF"
     DataSetS: "DataSetS"
-  train_sets: ["DataSetA", "DataSetB", "DataSetC", "DataSetD", "DataSetE"]
-  test_sets:  ["DataSetF", "DataSetS"]
+  train_sets: ["DataSetA", "DataSetB", "DataSetC", "DataSetD"]
+  test_sets:  ["DataSetF", "DataSetE","DataSetS"]
   image_extensions: [".tif", ".tiff", ".png", ".bmp"]
 
 # ------------------------------------------------------------------
