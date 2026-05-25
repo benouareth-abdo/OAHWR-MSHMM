@@ -3,9 +3,9 @@
 
 > Implementation of the analytic approach described in:
 >
-> **Benouareth A., Kermi A., Kessentini Y.**  
+> **Benouareth A. & Kermi A.  
 > *"Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration"*  
-> Information Fusion, 2026.
+> Submitted to Information Fusion, 2026.
 
 ---
 
