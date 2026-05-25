@@ -81,7 +81,7 @@ std::vector<WordRecord> IFNENITLoader::loadSet(const std::string& setId) const {
 
 std::vector<WordRecord> IFNENITLoader::loadAll() const {
     std::vector<WordRecord> all;
-    for (const char* s : {"a","b","c","d","e"}) {
+    for (const char* s : {"a","b","c","d","e", "f","s"}) {
         auto v = loadSet(s);
         all.insert(all.end(), v.begin(), v.end());
     }
@@ -102,7 +102,7 @@ std::vector<WordRecord> IFNENITLoader::loadTest() const {
   std::vector<WordRecord> test;
     for (const char* s : {"e","f","s"}) {
         auto v = loadSet(s);
-        test.insert(train.end(), v.begin(), v.end());
+        test.insert(test.end(), v.begin(), v.end());
     }
     return test;
 }
