@@ -33,7 +33,7 @@ struct WordRecord {
  * Expected directory structure:
  *   <root>/
  *     sets/
- *       a/  b/  c/  d/  e/   – writer sets
+ *       a/  b/  c/  d/  e/  /f  /s   – writer sets
  *         <word>.tif          – word images
  *     truth/
  *       <set>.xml             – ground-truth labels
