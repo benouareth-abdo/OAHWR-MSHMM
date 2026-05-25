@@ -42,7 +42,7 @@ static std::vector<WordRecord> parseGroundTruth(const std::string& xmlPath,
             if (r.label.empty()) continue;
             r.imagePath = rootPath + "/sets/" + setId + "/" + imgFile;
             r.writer    = setId;
-            r.partition = (setId == "e") ? "test" : "train";
+            r.partition = (setId == "e" ||setId == "f" || setId == "s" ) ? "test" : "train";
             records.push_back(r);
         }
         return records;
@@ -68,7 +68,7 @@ static std::vector<WordRecord> parseGroundTruth(const std::string& xmlPath,
         r.label     = label;
         r.imagePath = rootPath + "/sets/" + setId + "/" + imgFile;
         r.writer    = setId;
-        r.partition = (setId == "e") ? "test" : "train";
+        r.partition =  (setId == "e" ||setId == "f" || setId == "s" ) ? "test" : "train";
         records.push_back(r);
     }
     return records;
@@ -98,7 +98,13 @@ std::vector<WordRecord> IFNENITLoader::loadTrain() const {
 }
 
 std::vector<WordRecord> IFNENITLoader::loadTest() const {
-    return loadSet("e");
+    
+  std::vector<WordRecord> test;
+    for (const char* s : {"e","f","s"}) {
+        auto v = loadSet(s);
+        test.insert(train.end(), v.begin(), v.end());
+    }
+    return test;
 }
 
 Image IFNENITLoader::loadImage(const WordRecord& rec) const {
