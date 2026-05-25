@@ -174,7 +174,7 @@ ifnenit_root/
 | 0 – Upper contour | Freeman chain-code direction histogram (8) + zone/category encoding (7) | 15 |
 | 1 – Lower contour | Same as Stream 0 applied to lower contour | 15 |
 | 2 – Statistical | Vertical projection stats, transition histogram, density, gravity centres, concavities | 26 |
-| 3 – Structural | Endpoints, branches, crossings, inflections, cusps, diacritics, loops × 3 zones | 21 |
+| 3 – Structural | Endpoints, branches, crossings, inflections, cusps, diacritics, loops (complete and partial)× 3 zones | 24 |
 
 ### Duration Distributions
 
