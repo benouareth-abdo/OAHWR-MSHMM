@@ -156,7 +156,7 @@ ifnenit_root/
 ├── sets/
 │   ├── a/  b/  c/  d/   ← training sets (sets a–d)
 │   │   └── *.tif / *.pgm
-│   └── e/  f/  s/               ← test set
+│   └── e/  f/  s/               ← test sets (sets e, f & s)
 │       └── *.tif / *.pgm
 └── truth/
     ├── a.xml  b.xml  c.xml  d.xml  e.xml
@@ -205,12 +205,32 @@ I(O,Q) = H(Q) - H(Q|O)   [mutual information]
 ---
 
 ## References
+If you use this work, please consider citing the following related publications:
 
-1. Benouareth et al. (2008). *Arabic handwritten word recognition using HMMs with explicit state duration.* EURASIP JASP.
-2. Benouareth et al. (2008). *Semi-continuous HMMs with explicit state duration.* Pattern Recognition Letters.
-3. Kessentini et al. (2010). *Offline handwritten word recognition using multi-stream HMMs.* Pattern Recognition Letters.
-4. Levinson (1986). *Continuously variable duration HMMs.* Computer Speech & Language.
-5. Koerich et al. (2004). *Fast two-level HMM decoding algorithm.* IWFHR.
+1. Benouareth, A., Ennaji, A., & Sellami, M. (2008).
+   **Arabic handwritten word recognition using HMMs with explicit state duration.**
+   *EURASIP Journal on Advances in Signal Processing (JASP).*
+   https://doi.org/10.1155/2008/849085
+
+2. Benouareth, A., Ennaji, A., & Sellami, M. (2008).
+   **Semi-continuous HMMs with explicit state duration for unconstrained Arabic word modeling and recognition.**
+   *Pattern Recognition Letters, 29(12), 1742–1752.*
+   https://doi.org/10.1016/j.patrec.2008.04.006
+
+3. Kessentini, Y., Paquet, T., & Benhamadou, A. (2010).
+   **Off-line handwritten word recognition using multi-stream hidden Markov models.**
+   *Pattern Recognition Letters, 31(1), 60–70.*
+   https://doi.org/10.1016/j.patrec.2009.09.008
+
+4. Levinson, S. E. (1986).
+   **Continuously variable duration hidden Markov models for automatic speech recognition.**
+   *Computer Speech & Language, 1(1), 29–45.*
+   https://doi.org/10.1016/S0885-2308(86)80009-2
+
+5. Koerich, A. L., Sabourin, R., & Suen, C. Y. (2004).
+   **A fast two-level large vocabulary handwritten word recognition system.**
+   *Proceedings of the 9th International Workshop on Frontiers in Handwriting Recognition (IWFHR).*
+   https://doi.org/10.1109/IWFHR.2004.17
 
 ---
 
