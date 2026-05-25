@@ -4,7 +4,7 @@ Offline Unconstrained Handwritten Arabic Word Recognition (OUHAWR) — Holistic 
 
 Based on the paper:
 > *Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration*
-> Benouareth, Kermi, Kessentini (2026)
+> A. Benouareth, A. Kermi, To be submitted to Information fusion, (2026)
 
 ---
 
