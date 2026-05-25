@@ -151,8 +151,8 @@ python scripts/extract_features.py \
 - Benouareth et al. (2026) — *OUHAWR using Multi-Stream HMM with Explicit State Duration*
 1. Cook, R. D., & Forzani, L. (2008).
    **Principal Fitted Components for Dimension Reduction in Regression.**
-   *Journal of the Royal Statistical Society: Series B (Statistical Methodology), 70(5), 931–955.*
-   https://doi.org/10.1111/j.1467-9868.2008.00668.x
+   *Statistical Science, 23(4), 485–501.*
+   https://doi.org/10.1214/08-STS275
 
 2. Haghighat, M., Abdel-Mottaleb, M., & Alhalabi, W. (2016).
    **Discriminant Correlation Analysis: Real-Time Feature Level Fusion for Multimodal Biometric Recognition.**
@@ -169,7 +169,7 @@ python scripts/extract_features.py \
    *IEEE Transactions on Image Processing, 22(5), 1740–1752.*
    https://doi.org/10.1109/TIP.2012.2235848
 
-5. 5. Xiao, Y., Cao, Z., Wang, L., & Li, T. (2017).
+5. Xiao, Y., Cao, Z., Wang, L., & Li, T. (2017).
    **Local Phase Quantization Plus: A Principled Method for Embedding Local Phase
    Quantization into Fisher Vector for Blurred Image Recognition.**
    *Information Sciences, Volume 420, December 2017, Pages 77-95.*
