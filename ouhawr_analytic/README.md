@@ -156,7 +156,7 @@ ifnenit_root/
 ├── sets/
 │   ├── a/  b/  c/  d/   ← training sets (sets a–d)
 │   │   └── *.tif / *.pgm
-│   └── e/               ← test set
+│   └── e/  f/  s/               ← test set
 │       └── *.tif / *.pgm
 └── truth/
     ├── a.xml  b.xml  c.xml  d.xml  e.xml
