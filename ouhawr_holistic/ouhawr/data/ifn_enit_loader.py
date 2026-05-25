@@ -40,8 +40,8 @@ import cv2
 ALL_DATASETS = ["DataSetA", "DataSetB", "DataSetC", "DataSetD",
                 "DataSetE", "DataSetF", "DataSetS"]
 
-DEFAULT_TRAIN = ["DataSetA", "DataSetB", "DataSetC", "DataSetD", "DataSetE"]
-DEFAULT_TEST  = ["DataSetF", "DataSetS"]
+DEFAULT_TRAIN = ["DataSetA", "DataSetB", "DataSetC", "DataSetD"]
+DEFAULT_TEST  = ["DataSetE", "DataSetF", "DataSetS"]
 
 IMAGE_EXTENSIONS = {".tif", ".tiff", ".png", ".bmp", ".jpg", ".jpeg"}
 
