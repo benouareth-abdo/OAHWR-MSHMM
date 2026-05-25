@@ -1,4 +1,5 @@
-Offline Unconstrained Handwritten Arabic Word Recognition (OUHAWR)
+<h1>OOffline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration</h1>
+
 This repository contains the implementation of a hybrid two-stage pipeline for offline unconstrained handwritten Arabic word recognition (OUHAWR).
 
 <b>Overview</b>
