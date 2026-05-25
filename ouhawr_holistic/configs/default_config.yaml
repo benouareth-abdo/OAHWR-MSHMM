@@ -1,0 +1,129 @@
+# ============================================================
+#  OUHAWR Holistic Pipeline — Default Configuration
+# ============================================================
+
+# ------------------------------------------------------------------
+# IFN/ENIT dataset paths
+# ------------------------------------------------------------------
+data:
+  root: "/path/to/IFN_ENIT"          # Root directory of the database
+  datasets:
+    # Each entry: dataset_name -> subdirectory under root
+    DataSetA: "DataSetA"
+    DataSetB: "DataSetB"
+    DataSetC: "DataSetC"
+    DataSetD: "DataSetD"
+    DataSetE: "DataSetE"
+    DataSetF: "DataSetF"
+    DataSetS: "DataSetS"
+  train_sets: ["DataSetA", "DataSetB", "DataSetC", "DataSetD", "DataSetE"]
+  test_sets:  ["DataSetF", "DataSetS"]
+  image_extensions: [".tif", ".tiff", ".png", ".bmp"]
+
+# ------------------------------------------------------------------
+# Cross-validation sub-lexicon settings
+# ------------------------------------------------------------------
+cross_validation:
+  n_words: 100          # Number of word classes for CV
+  n_samples: 40         # Number of image samples per class
+  k_folds: 5            # Number of folds
+  random_seed: 42
+
+# ------------------------------------------------------------------
+# Preprocessing
+# ------------------------------------------------------------------
+preprocessing:
+  target_width: 256
+  target_height: 128
+  entropy_window: 7     # N×N neighbourhood for entropy filtering
+
+# ------------------------------------------------------------------
+# LPQ+ descriptor  (Algorithm 3 in paper)
+# ------------------------------------------------------------------
+lpq_plus:
+  window_size: 7        # M×M local window
+  freq_scalar: 1.0      # a  (controls blur-insensitivity)
+  quant_alpha: 1.0      # α  (soft-quantisation sharpness)
+  bins_B: 8             # B  ∈ {4, 8, 16}
+  n_patches: 32         # N  (spatial grid, e.g. 32×32)
+  cell_grid: [2, 2]     # sub-cell grid per patch
+  # Search space for CV
+  cv_search:
+    window_size: [3, 5, 7, 9]
+    bins_B: [4, 8, 16]
+    n_patches: [2, 4, 8, 16, 32, 64,128,512, 256,1024,2048] # patch sizes (PW, PH): [(128,128),(128,64),(64,64), (64,32), (32,32),(32,16), (16,16), (16,8), (8,8),(8,4),(4,4)]   
+
+# ------------------------------------------------------------------
+# WLD descriptor
+# ------------------------------------------------------------------
+wld:
+  neighbourhood_size: 5   # S×S
+  excitation_bins_T: 8    # T
+  orientation_bins_M: 6   # M
+  dominant_orient_K: 2    # K
+  n_patches: 128           # spatial grid (e.g. 16×16)
+  n_scales_L: 2           # L
+  cv_search:
+    excitation_bins_T: [8, 10, 12, 14,16]
+    orientation_bins_M: [6, 8]
+    n_patches: [2, 4, 8, 16, 32, 64,128,512, 256,1024,2048] # patch sizes (PW, PH): [(128,128),(128,64),(64,64), (64,32), (32,32),(32,16), (16,16), (16,8), (8,8),(8,4),(4,4)]
+
+# ------------------------------------------------------------------
+# LDNP descriptor
+# ------------------------------------------------------------------
+ldnp:
+  n_directions: 8         # K Kirsch compass directions
+  n_dominant: 2           # n top directions retained
+  window_size: 3          # S×S convolution mask 
+  n_patches: 128           # spatial grid (16x16)
+  n_scales_L: 3           # L
+  cv_search:
+    n_scales_L: [1, 2, 3]
+    n_patches: [2, 4, 8, 16, 32, 64,128,256, 512,1024,2048] # patch sizes (PW, PH): [(128,128),(128,64),(64,64), (64,32), (32,32),(32,16), (16,16), (16,8), (8,8),(8,4),(4,4)]
+
+# ------------------------------------------------------------------
+# Dimensionality reduction
+# ------------------------------------------------------------------
+reduction:
+  method: "LSDR"          # PCA | LDA | LSDR | PCA+LDA | LSDR+LDA
+  target_dim: 64          # d (number of components to keep)
+  # PCA options
+  pca:
+    whiten: false
+  # LDA options
+  lda:
+    solver: "svd"
+  # LSDR (SPFC) options
+  lsdr:
+    max_iter: 200
+    tol: 1.0e-6
+  cv_search:
+    method: ["PCA", "LDA", "LSDR", "PCA+LDA", "LSDR+LDA"]
+    target_dim: [32,40,50,60,64,70,80,90,100,110,120,128,130,140,150,160,170,180,190,200,210,220,230,240,250,256]
+
+# ------------------------------------------------------------------
+# DCA feature fusion
+# ------------------------------------------------------------------
+fusion:
+  method: "MDCA"          # Multiset Discriminant Correlation Analysis
+  n_components: null      # null → use maximum feasible (c-1)
+
+# ------------------------------------------------------------------
+# SVM classification
+# ------------------------------------------------------------------
+svm:
+  kernel: "linear"        # linear kernel (one-vs-rest, as in paper)
+  C: 1.0
+  n_best: 10              # N-best hypotheses returned
+  cv_search:
+    C: [0.01, 0.1, 1.0, 10.0, 100.0]
+    n_best: [1,5, 10, 20, 30,40,50,60, 70,80,90,100]
+
+# ------------------------------------------------------------------
+# Output
+# ------------------------------------------------------------------
+output:
+  results_dir: "results/"
+  save_features: true
+  save_models: true
+  verbose: true
