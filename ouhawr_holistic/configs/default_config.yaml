@@ -9,15 +9,15 @@ data:
   root: "/path/to/IFN_ENIT"          # Root directory of the database
   datasets:
     # Each entry: dataset_name -> subdirectory under root
-    DataSetA: "DataSetA"
-    DataSetB: "DataSetB"
-    DataSetC: "DataSetC"
-    DataSetD: "DataSetD"
-    DataSetE: "DataSetE"
-    DataSetF: "DataSetF"
-    DataSetS: "DataSetS"
-  train_sets: ["DataSetA", "DataSetB", "DataSetC", "DataSetD"]
-  test_sets:  ["DataSetE", "DataSetF","DataSetS"]
+    DataSetA: "set_a"
+    DataSetB: "set_b"
+    DataSetC: "set_c"
+    DataSetD: "set_d"
+    DataSetE: "set_e"
+    DataSetF: "set_f"
+    DataSetS: "set_s"
+  train_sets: ["set_a", "set_b", "set_c", "set_d"]
+  test_sets:  ["set_e", "set_f","set_s"]
   image_extensions: [".tif", ".tiff", ".png", ".bmp"]
 
 # ------------------------------------------------------------------
