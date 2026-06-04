@@ -79,24 +79,24 @@ The IFN/ENIT database contains handwritten Arabic town names across 6 sets:
 
 | Set      | Role (default split)  |
 |----------|-----------------------|
-| DataSetA | Training              |
-| DataSetB | Training              |
-| DataSetC | Training              |
-| DataSetD | Training              |
-| DataSetE | Test                  |
-| DataSetF | Test                  |
-| DataSetS | Test                  |
+| set_a    | Training              |
+| set_b    | Training              |
+| set_c    | Training              |
+|set_d     | Training              |
+| set_e    | Test                  |
+| set_f    | Test                  |
+|set_s     | Test                  |
 
 Configure paths in `configs/default_config.yaml`.
 
 Expected directory layout:
 ```
 /path/to/IFN_ENIT/
-├── DataSetA/
+├── set_a/
 │   ├── <word_class>/
 │   │   ├── image1.tif
 │   │   └── ...
-├── DataSetB/
+├── set_b/
 │   └── ...
 ...
 ```
