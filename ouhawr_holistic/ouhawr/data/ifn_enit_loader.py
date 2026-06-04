@@ -5,19 +5,19 @@ IFN/ENIT database loader.
 
 The IFN/ENIT database contains handwritten Arabic town (place) names
 organized into 7 dataset partitions:
-  DataSetA, DataSetB, DataSetC, DataSetD, DataSetE, DataSetF, DataSetS
+  set_a, set_b,set_c, set_d, set_e, set_f, set_s
 
 Expected directory layout
 -------------------------
 <root>/
-  DataSetA/
+  set_a/
     <word_class_1>/
       image1.tif
       image2.tif
       ...
     <word_class_2>/
       ...
-  DataSetB/
+  set_b/
     ...
   ...
 
@@ -37,11 +37,11 @@ import cv2
 
 
 # All 7 partitions of the IFN/ENIT database
-ALL_DATASETS = ["DataSetA", "DataSetB", "DataSetC", "DataSetD",
-                "DataSetE", "DataSetF", "DataSetS"]
+ALL_DATASETS = ["set_a", "set_b", "set_c", "set_d",
+                "set_e", "set_f", "set_s"]
 
-DEFAULT_TRAIN = ["DataSetA", "DataSetB", "DataSetC", "DataSetD"]
-DEFAULT_TEST  = ["DataSetE", "DataSetF", "DataSetS"]
+DEFAULT_TRAIN = ["set_a", "set_b", "set_c", "set_d"]
+DEFAULT_TEST  = ["set_e", "set_f", "set_s"]
 
 IMAGE_EXTENSIONS = {".tif", ".tiff", ".png", ".bmp", ".jpg", ".jpeg"}
 
@@ -62,7 +62,7 @@ class IFNENITLoader:
     Parameters
     ----------
     root       : path to the IFN/ENIT root directory
-    datasets   : list of partition names to load (e.g. ["DataSetA", "DataSetB"])
+    datasets   : list of partition names to load (e.g. ["set_a", "set_b"])
     preprocessor : optional ImagePreprocessor; if provided, images are
                    preprocessed before being returned.
     """
