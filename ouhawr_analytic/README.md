@@ -4,7 +4,7 @@
 >
 > Benouareth A. & Kermi A.  
 > *"Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration"*  
-> To be submitted to Information Fusion, 2026.
+> Submitted to Information Fusion, 2026.
 
 ---
 
