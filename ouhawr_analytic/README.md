@@ -4,7 +4,7 @@
 >
 > Benouareth A. & Kermi A.  
 > *"Offline Handwritten Arabic Word Recognition using Multi-Stream HMM with Explicit State Duration"*  
-> Submitted to Expert Systems with Applications, 2026.
+> Submitted to Pattern Recognition, 2026.
 
 ---
 
